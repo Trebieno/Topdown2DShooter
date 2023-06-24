@@ -34,12 +34,11 @@ public class Healing : MonoBehaviour {
 	{
 		_currentHealth -= damage;
 		if(_currentHealth <= 0)
-		{
 			Death();
-		}
 
 		if(_deathEffectPrefab != null)
 			Instantiate(_deathEffectPrefab, damagedPosition, Quaternion.identity);
+			
 		Damaged?.Invoke();
 	}
 

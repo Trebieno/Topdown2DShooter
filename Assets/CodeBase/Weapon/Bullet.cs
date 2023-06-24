@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
 
     public void StartMove(float speedBullet, float destroyTime, float maxSpread, float damage)
     {
+        _damage = damage;
         float spread = Random.Range(-maxSpread, maxSpread);
         Vector2 bulletDirection = Quaternion.Euler(0, 0, spread) * transform.up;
         _rb.AddForce(bulletDirection * speedBullet, ForceMode2D.Impulse);

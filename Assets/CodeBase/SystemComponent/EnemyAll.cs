@@ -6,8 +6,8 @@ public class EnemyAll : MonoBehaviour
 {
     public static EnemyAll Instance { get; private set; }
 
-    [SerializeField] private Dictionary<GameObject, Enemy> _enemies = new Dictionary<GameObject, Enemy>();
-    public Dictionary<GameObject, Enemy> Enemies => _enemies;
+    [SerializeField] private Dictionary<GameObject, Character> _enemies = new Dictionary<GameObject, Character>();
+    public Dictionary<GameObject, Character> Enemies => _enemies;
 
     private void Awake()
     {
