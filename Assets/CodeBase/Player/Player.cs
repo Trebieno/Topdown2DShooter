@@ -14,6 +14,8 @@ public class Player : MonoCache
 
     private void Start()
     {
+        // PlayerCache.Instance.Players.Add(gameObject, this);
+        PlayerCache.Instance.Player = this;
         _shooting.SelectedGun += _movement.SetSpeedWeight;
     }
 

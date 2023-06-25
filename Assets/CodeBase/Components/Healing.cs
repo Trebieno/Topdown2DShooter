@@ -11,7 +11,7 @@ public class Healing : MonoBehaviour {
 	[SerializeField] private ParticleSystem _damageEffectPrefab;
 
 	public event Action Died;
-	public event Action Damaged;
+	public event Action<Vector3> Damaged;
 	public event Action HealHealth;
     public event Action<float, float> HealthChanged;
 
@@ -39,7 +39,7 @@ public class Healing : MonoBehaviour {
 		if(_deathEffectPrefab != null)
 			Instantiate(_deathEffectPrefab, damagedPosition, Quaternion.identity);
 			
-		Damaged?.Invoke();
+		Damaged?.Invoke(damagedPosition);
 	}
 
 	public virtual void Death()
